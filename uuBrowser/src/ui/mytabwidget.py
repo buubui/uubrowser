@@ -15,4 +15,9 @@ class MyTabWidget(QtGui.QTabWidget):
         '''
         Constructor
         '''
-        QtGui.QTableWidget.__init__(self,parent)
+        QtGui.QTabWidget.__init__(self,parent)
+    def mouseDoubleClickEvent(self,event):
+        if event:
+            print event
+            if event.y() < self.tabBar().height ():
+                self.emit(QtCore.SIGNAL('doubleClick'),event)
