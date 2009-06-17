@@ -3,7 +3,7 @@ Created on Jun 1, 2009
 
 @author: buubui
 '''
-from __init__ import BASEDIR, __version__, __author__
+from __init__ import *
 import sys
 import platform
 sys.path.append(BASEDIR+'/..')
@@ -55,10 +55,10 @@ class WebBrowser(QtGui.QMainWindow,Ui_MainWindow):
         self.setWindowTitle(self.browserName)
         self.txtAddress.setText(PROTOCOL[0])
         self.txtAddress.setFocus()
-        self.changeIcon(self, BASEDIR+'/icons/logo.png')
-        self.changeIcon(self.btnBack, BASEDIR+'/icons/go-back.png')
-        self.changeIcon(self.btnForward, BASEDIR+'/icons/go-next.png')
-        self.changeIcon(self.btnGo, BASEDIR+'/icons/refresh.png')
+        self.changeIcon(self, pathFromBase('/icons/logo.png'))
+        self.changeIcon(self.btnBack, pathFromBase('/icons/go-back.png'))
+        self.changeIcon(self.btnForward, pathFromBase('/icons/go-next.png'))
+        self.changeIcon(self.btnGo, pathFromBase('/icons/refresh.png'))
         self.btnBack.setDisabled(True)
         self.btnForward.setDisabled(True)
         webbsetting=self.wvDisplay.page().settings()
